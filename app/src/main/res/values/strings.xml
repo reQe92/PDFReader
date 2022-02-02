@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">PDF You</string>
+    <string name="action_settings">Settings</string>
+    <string name="pdf_files">PDF Files</string>
+    <string name="page_number">Page %s of %s</string>
+    <string name="pdf_render">PDF Render</string>
+    <string name="open_pdf">Open PDF</string>
+    <string name="load_device_files">LOAD DEVICE FILES</string>
+    <string name="_load_device_files">Load device files</string>
+    <string name="share_pdf">Share PDF</string>
+    <string name="permission_to_load_files_required">You should give permission to load device files</string>
+    <string name="cancel">Cancel</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+    <string name="invalid_file">Invalid file</string>
+    <string name="pdf_read_book_mode">Read mode</string>
+    <string name="horizontal_scroll">Horizontal swipe</string>
+    <string name="night_mode">Night mode</string>
+    <string name="hide_share_pdf">Hide share PDF</string>
+    <string name="hide_share_pdf_summary">Hide the PDF share button</string>
+    <string name="night_mode_summary">Invert the colors of the PDF to protect your eyes at night</string>
+    <string name="horizontal_scroll_summary">Change the scroll from vertical to horizontal</string>
+    <string name="pdf_read_book_mode_summary">Center the page in the middle of the screen for easy reading</string>
+    <string name="pdf_reader">PDF VIEWER</string>
+    <string name="version">Version</string>
+    <string name="share_app">Share app</string>
+    <string name="share_app_summary">Share the app easily</string>
+    <string name="information">INFORMATION</string>
+    <string name="checkout_app">Hey checkout my app at: </string>
+</resources>

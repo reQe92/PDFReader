@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/pdf_reader">
+
+        <SwitchPreference
+            android:icon="@drawable/ic_baseline_menu_book_24"
+            android:key="preference-read-book-mode"
+            android:summary="@string/pdf_read_book_mode_summary"
+            android:title="@string/pdf_read_book_mode" />
+
+        <SwitchPreference
+            android:icon="@drawable/ic_baseline_swipe_24"
+            android:key="preference-pdf-horizontal-scroll"
+            android:summary="@string/horizontal_scroll_summary"
+            android:title="@string/horizontal_scroll" />
+
+        <SwitchPreference
+            android:icon="@drawable/ic_baseline_dark_mode_24"
+            android:key="preference-render-pdf-night-mode"
+            android:summary="@string/night_mode_summary"
+            android:title="@string/night_mode" />
+
+        <SwitchPreference
+            android:icon="@drawable/ic_baseline_disabled_visible_24"
+            android:key="preference-hide-share-pdf-button"
+            android:summary="@string/hide_share_pdf_summary"
+            android:title="@string/hide_share_pdf" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/information">
+
+        <Preference
+            android:icon="@drawable/ic_baseline_build_24"
+            android:key="preference-version"
+            android:title="@string/version">
+        </Preference>
+
+        <Preference
+            android:icon="@drawable/ic_baseline_share_24"
+            android:key="preference-share-app"
+            android:summary="@string/share_app_summary"
+            android:title="@string/share_app">
+        </Preference>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

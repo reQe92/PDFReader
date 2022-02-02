@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "830764720639",
+    "project_id": "pdfreader-68315",
+    "storage_bucket": "pdfreader-68315.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830764720639:android:2d59061635a51feabac7ca",
+        "android_client_info": {
+          "package_name": "com.drvidal.pdfreader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830764720639-p0ffkvbhikmf0m2f34d4cr69don3ge3l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCr4FDGzmMMVIHnJHv6TDDOagPJJuSDiXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830764720639-p0ffkvbhikmf0m2f34d4cr69don3ge3l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

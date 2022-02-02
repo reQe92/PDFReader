@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">PDF You</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="pdf_files">Documentos PDF</string>
+    <string name="page_number">Página %s de %s</string>
+    <string name="pdf_render">Visor PDF</string>
+    <string name="open_pdf">Abrir PDF</string>
+    <string name="load_device_files">CARGAR ARCHIVOS DEL DISPOSITIVO</string>
+    <string name="_load_device_files">Cargar archivos del dispositivo</string>
+    <string name="share_pdf">Compartir PDF</string>
+    <string name="permission_to_load_files_required">Debe dar permiso para cargar archivos del dispositivo</string>
+    <string name="cancel">Cancelar</string>
+    <string name="accept">Aceptar</string>
+    <string name="decline">Rechazar</string>
+    <string name="invalid_file">Archivo no válido</string>
+    <string name="pdf_read_book_mode">Modo lectura</string>
+    <string name="horizontal_scroll">Desplazamiento horizontal</string>
+    <string name="night_mode">Modo noche</string>
+    <string name="hide_share_pdf">Ocultar compartir PDF</string>
+    <string name="hide_share_pdf_summary">Oculta el botón de compartir PDF</string>
+    <string name="night_mode_summary">Invierte los colores del PDF para cuidar la vista por la noche</string>
+    <string name="horizontal_scroll_summary">Cambia el desplazamiento de vertical a horizontal</string>
+    <string name="pdf_read_book_mode_summary">Centra la página en el medio de la pantalla para una cómoda lectura</string>
+    <string name="pdf_reader">VISOR PDF</string>
+    <string name="version">Versión</string>
+    <string name="share_app">Compartir aplicación</string>
+    <string name="share_app_summary">Comparta la aplicación de manera sencilla</string>
+    <string name="information">INFORMACIÓN</string>
+    <string name="checkout_app">Hola, encuentra mi aplicación en: </string>
+</resources>
