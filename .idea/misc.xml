@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/font/noto_sans.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.14814814814814814" />
+        <entry key="app/src/main/res/layout/dialog_password.xml" value="0.1458966565349544" />
         <entry key="app/src/main/res/layout/fragment_file_list.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.14814814814814814" />
         <entry key="app/src/main/res/layout/fragment_list_files.xml" value="0.17844202898550723" />

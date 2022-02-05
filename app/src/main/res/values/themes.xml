@@ -31,10 +31,5 @@
         <item name="fontFamily">@font/noto_sans</item>
     </style>
 
-    <style name="DialogFullScreenTheme" parent="AppTheme">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowFullscreen">false</item>
-        <item name="android:windowIsFloating">false</item>
-    </style>
 
 </resources>

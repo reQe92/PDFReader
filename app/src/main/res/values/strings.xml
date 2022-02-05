@@ -27,4 +27,6 @@
     <string name="share_app_summary">Share the app easily</string>
     <string name="information">INFORMATION</string>
     <string name="checkout_app">Hey checkout my app at: </string>
+    <string name="insert_password">Insert password</string>
+    <string name="insert_password_description">The PDF is password protected, enter it to view it</string>
 </resources>

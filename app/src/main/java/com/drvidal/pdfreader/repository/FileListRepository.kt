@@ -19,27 +19,32 @@ import kotlinx.coroutines.withContext
 import org.apache.commons.io.FileUtils
 
 
-class FileListRepository constructor(private val context: Context, private val analyticsRepository: AnalyticsRepository) {
+class FileListRepository constructor(
+    private val context: Context,
+    private val analyticsRepository: AnalyticsRepository
+) {
 
-    private val permissionToCheck =  if (Build.VERSION.SDK_INT > Build.VERSION_CODES.Q) {
+    private val permissionToCheck = if (Build.VERSION.SDK_INT > Build.VERSION_CODES.Q) {
         Manifest.permission.MANAGE_EXTERNAL_STORAGE
     } else {
         Manifest.permission.READ_EXTERNAL_STORAGE
     }
 
-    fun getFileUriFromUri(uri: Uri) : FileUri? {
+    fun getFileUriFromUri(uri: Uri): FileUri? {
         try {
-            context.contentResolver.query(uri,
+            context.contentResolver.query(
+                uri,
                 null,
                 null,
                 null,
-                null)?.use { cursor ->
+                null
+            )?.use { cursor ->
                 val nameIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
                 val sizeIndex = cursor.getColumnIndex(OpenableColumns.SIZE)
                 cursor.moveToFirst()
                 val name = cursor.getString(nameIndex)
                 val size = cursor.getLong(sizeIndex)
-                return FileUri(uri, name.substringBeforeLast("."), size, null, null)
+                return FileUri(uri, name.substringBeforeLast("."), size)
             }
         } catch (e: Exception) {
             e.printStackTrace()
@@ -48,7 +53,7 @@ class FileListRepository constructor(private val context: Context, private val a
         return null
     }
 
-    fun hasStoragePermission() : Boolean {
+    fun hasStoragePermission(): Boolean {
         return if (Build.VERSION.SDK_INT > Build.VERSION_CODES.Q) {
             Environment.isExternalStorageManager()
         } else {
@@ -91,10 +96,8 @@ class FileListRepository constructor(private val context: Context, private val a
     }
 
     @RequiresApi(Build.VERSION_CODES.Q)
-    private fun getAllFileWithMedia() : List<FileUri> {
+    private fun getAllFileWithMedia(): List<FileUri> {
         try {
-
-
             val uris = mutableListOf<FileUri>()
             val cr = context.applicationContext.contentResolver
             val uri = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL)

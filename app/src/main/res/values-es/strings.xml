@@ -27,4 +27,6 @@
     <string name="share_app_summary">Comparta la aplicación de manera sencilla</string>
     <string name="information">INFORMACIÓN</string>
     <string name="checkout_app">Hola, encuentra mi aplicación en: </string>
+    <string name="insert_password">Introducir contraseña</string>
+    <string name="insert_password_description">El PDF está protegido por contraseña, introdúcela para visualizarlo</string>
 </resources>

@@ -3,7 +3,9 @@ package com.drvidal.pdfreader.presentation.pdfrender
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -18,7 +20,8 @@ import com.drvidal.pdfreader.util.Constants.PREFERENCE_HIDE_SHARE_PDF_BUTTON
 import com.drvidal.pdfreader.util.Constants.PREFERENCE_PDF_HORIZONTAL_SCROLL
 import com.drvidal.pdfreader.util.Constants.PREFERENCE_READ_BOOK_MODE
 import com.drvidal.pdfreader.util.Constants.PREFERENCE_RENDER_PDF_NIGHT_MODE
-import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.shockwave.pdfium.PdfPasswordException
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -94,7 +97,6 @@ class PDFRenderFragment : Fragment(R.layout.fragment_pdf_render) {
                 PREFERENCE_READ_BOOK_MODE, false
             )
 
-
         binding.pdfView.fromUri(fileUri.uri)
             .enableAnnotationRendering(true)
             .onPageChange { page, pageCount ->
@@ -105,6 +107,7 @@ class PDFRenderFragment : Fragment(R.layout.fragment_pdf_render) {
                     pageCount
                 )
             }
+            .password(fileUri.password)
             .fitEachPage(true)
             .spacing(5)
             .swipeHorizontal(swipeScroll)
@@ -113,9 +116,7 @@ class PDFRenderFragment : Fragment(R.layout.fragment_pdf_render) {
             .pageSnap(readBookMode)
             .autoSpacing(readBookMode)
             .onError {
-                viewModel.logException(it)
-                Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
-                findNavController().popBackStack()
+                handleOnError(it)
             }
             .onLoad {
                 viewModel.logReadedFile()
@@ -123,6 +124,7 @@ class PDFRenderFragment : Fragment(R.layout.fragment_pdf_render) {
             .load()
 
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_render_pdf, menu)
@@ -146,6 +148,34 @@ class PDFRenderFragment : Fragment(R.layout.fragment_pdf_render) {
         super.onDestroyView()
         (activity as AppCompatActivity?)?.supportActionBar?.subtitle = null
         _binding = null
+    }
+
+
+    private fun handleOnError(throwable: Throwable) {
+        if (throwable is PdfPasswordException) {
+            showOnPasswordDialog()
+        } else {
+            viewModel.logException(throwable)
+            Toast.makeText(requireContext(), throwable.message, Toast.LENGTH_LONG).show()
+            findNavController().popBackStack()
+        }
+    }
+
+    private fun showOnPasswordDialog() {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(getString(R.string.insert_password))
+            .setMessage(getString(R.string.insert_password_description))
+            .setView(R.layout.dialog_password)
+            .setPositiveButton(R.string.accept) { dialog, which ->
+                fileUri.password =
+                    (dialog as? AlertDialog)?.findViewById<EditText>(R.id.edit_text_password)?.text.toString()
+                renderPDF()
+                dialog.dismiss()
+            }
+            .setNegativeButton(getString(R.string.cancel)) { dialog, _ ->
+                findNavController().popBackStack()
+            }
+            .show()
     }
 
 }
